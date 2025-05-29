@@ -10,7 +10,7 @@ author:
   affiliation:
     - name: Российский университет дружбы народов
       country: Российская Федерация
-      postal-code: 117198
+      postal-code: 115419
       city: Москва
       address: ул. Орджоникидзе, д. 3
 ## Title
@@ -92,21 +92,21 @@ format:
 
 Донастраиваем ключ ssh. Создаем папки на пути ~/work/study/2024-2025/"Операционные системы". Клонируем все в git. ([рис. @fig-004])
 
-![V Создание папки на локальном компьютере и клонирование в git](image/create way_clone git.png){#fig-004 width=70%}
+![V Создание папки на локальном компьютере и клонирование в git](image/create_way_clone_git.png){#fig-004 width=70%}
 
 
 Перешли в каталог cd ~/work/study/2024-2025/"Операционные системы". Удаляем файл rm package.json ([рис. @fig-005])
 
-![V Удаление файла rm package](image/delete rm package.png){#fig-005 width=70%}
+![V Удаление файла rm package](image/delete_rm_package.png){#fig-005 width=70%}
 
 
 Создаем необходимые каталоги и отправляем файлы на сервер. ([рис. @fig-006])
 
-![V Создание каталогов и отправка в git](image/create and go to git.png){#fig-006 width=70%}
+![V Создание каталогов и отправка в git](image/create_and_go_git.png){#fig-006 width=70%}
 
 Продолжение - git push ([рис. @fig-007])
 
-![V Git push](image/git push.png){#fig-007 width=70%}
+![V Git push](image/git_push.png){#fig-007 width=70%}
 
 # Выводы
 
