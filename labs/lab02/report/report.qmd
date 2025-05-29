@@ -3,10 +3,10 @@
 
 ## Author
 author:
-  name: Дмитрий Сергеевич Кулябов
+  name: Лобанова Диана Леонидовна
   degrees: DSc
-  orcid: 0000-0002-0877-7063
-  email: kulyabov-ds@rudn.ru
+  orcid: 
+  email: 
   affiliation:
     - name: Российский университет дружбы народов
       country: Российская Федерация
