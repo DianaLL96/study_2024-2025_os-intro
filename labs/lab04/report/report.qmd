@@ -164,6 +164,28 @@ format:
 ![V Команда ls -ltR](image/ls_ltR.png){#fig-014 width=70%}
 
 
+6. Команда man (от английского "manual") предназначена для просмотра справочных страниц по различным командам и утилитам операционной системы.
+Получим информацию о некоторых командах:
+
+- Команда man cd ([рис. @fig-015])
+![V Команда man cd](image/man_cd.png){#fig-015 width=70%}
+
+- Команда man pwd ([рис. @fig-016])
+![V Команда man pwd](image/man_pwd.png){#fig-016 width=70%}
+
+- Команда man mkdir ([рис. @fig-017])
+![V Команда man mkdir](image/man_mkdir.png){#fig-017 width=70%}
+
+- Команда man rmdir ([рис. @fig-018])
+![V Команда man rmdir](image/man_rmdir.png){#fig-018 width=70%}
+
+- Команда man rm ([рис. @fig-019])
+![V Команда man rm](image/man_rm.png){#fig-019 width=70%}
+
+
+7. Команда history
+history.png
+
 
 # Выводы
 
