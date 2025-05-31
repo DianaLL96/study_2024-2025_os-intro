@@ -14,8 +14,9 @@ author:
       city: Москва
       address: ул. Орджоникидзе, д. 3
 ## Title
-title: "Лабораторная работа 2"
-subtitle: "Первоначальна настройка git"
+title: "Лабораторная работа 4"
+subtitle: "Основы интерфейса взаимодействия
+пользователя с системой Unix на уровне командной строки"
 license: "CC BY"
 ## Generic options
 lang: ru-RU
