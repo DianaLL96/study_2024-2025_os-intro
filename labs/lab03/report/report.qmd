@@ -110,11 +110,9 @@ format:
 ![V Удаление файла rm package](image/delete_rm_package.png){#fig-005 width=70%}
 
 	3. Создаем необходимые каталоги с помощью команд echo os-intro > COURSE и make
-	4. Отправим файлы на сервер. ([рис. @fig-006])
+	4. Отправим файлы на сервер. ([рис. @fig-006, @fig-007])
 
 ![V Создание каталогов и отправка в git](image/create_and_go_git.png){#fig-006 width=70%}
-
-([рис. @fig-007])
 
 ![V Git push](image/git_push.png){#fig-007 width=70%}
 
