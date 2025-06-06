@@ -114,6 +114,7 @@ vboxmanage list systemproperties | grep "Default machine folder:" | cut -d":" -f
 
 ![V Командная строка](image/komand_str.png){#fig-003 width=70%}
 
+
 4. Установочный образ
 
 Перенесите установочный образ в папку /var/tmp/имя_пользователя/iso:
@@ -129,10 +130,9 @@ mv Fedora-Sway-Live-x86_64-39-1.5.iso "$(vboxmanage list systemproperties | grep
 - Графический интерфейс
 -- В меню выберем "Файл", "Настройки".
 -- Выберем "Ввод", вкладка "Виртуальная машина"
--- Выберем Сочетание клавиш в строке "Хост-комбинация
+-- Выберем cочетание клавиш в строке "Хост-комбинация"
 -- Нажмаем новое сочетание клавиш
--- Нажмаем ОК
-([рис. @fig-005])
+-- Нажмаем ОК ([рис. @fig-005])
 
 ![V Графическая настройка хост-клавиши](image/graf_host.png){#fig-005 width=70%}
 
@@ -143,6 +143,20 @@ VBoxManage getextradata global GUI/Input/HostKeyCombination
 VBoxManage setextradata global GUI/Input/HostKeyCombination 65383 ([рис. @fig-006])
 
 ![V Настройка хост-клавиши в командной строке](image/komand_host.png){#fig-006 width=70%}
+
+
+6. Создание виртуальной машины
+
+- Для использования графического интерфейса запукаем менеджер виртуальных машин, введя в командной строке: VirtualBox & ([рис. @fig-007])
+
+![V Менеджер виртуальных машин](image/virtualbox.png){#fig-007 width=70%}
+
+
+- Создадим новую виртуальную машину в командной строке
+vboxmanage createvm --name "$(id -un)_os-intro" --ostype Fedora_64 --register ([рис. @fig-008])
+
+![V Новая виртуальная машина](image/new_mashin.png){#fig-008 width=70%}
+
 
 
 # Выводы
