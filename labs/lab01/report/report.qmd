@@ -71,6 +71,7 @@ format:
     toc-depth: 2
 ---
 
+
 # Цель работы
 
 Целью данной работы является приобретение практических навыков установки операционной системы на виртуальную машину, настройки минимально необходимых для дальнейшей работы сервисов.
@@ -80,8 +81,8 @@ format:
 
 1. Создадим необходимые каталоги
 
--Запускаем терминал и переходим в каталог /var/tmp
--Создадим каталог с именем пользователя  ([рис. @fig-001])
+- Запускаем терминал и переходим в каталог /var/tmp
+- Создадим каталог с именем пользователя  ([рис. @fig-001])
 
 ![V Создание каталогов](image/katalogi.png){#fig-001 width=70%}
 
@@ -98,19 +99,18 @@ format:
 
 3. Командная строка
 
--Зададим отображение информации о настройках VirtualBox на английском.
+- Зададим отображение информации о настройках VirtualBox на английском.
 Поэтому следует задать кодировку для отображения свойств VirtualBox:
 vboxmanage setproperty language C
 
--Установим папку для виртуальных машине в /var/tmp/имя_пользователя:
+- Установим папку для виртуальных машине в /var/tmp/имя_пользователя:
 vboxmanage setproperty machinefolder /var/tmp/$(id -un)
 
--Поверим, что папка виртуальных машин по умолчанию изменена:
+- Поверим, что папка виртуальных машин по умолчанию изменена:
 vboxmanage list systemproperties | grep "Default machine folder:"
 
--Следующая команда выдаст только каталог:
-vboxmanage list systemproperties | grep "Default machine folder:" | cut -d":" -f2 | tr -d ' '
-([рис. @fig-003])
+- Следующая команда выдаст только каталог:
+vboxmanage list systemproperties | grep "Default machine folder:" | cut -d":" -f2 | tr -d ' ' ([рис. @fig-003])
 
 ![V Командная строка](image/komand_str.png){#fig-003 width=70%}
 
@@ -119,11 +119,10 @@ vboxmanage list systemproperties | grep "Default machine folder:" | cut -d":" -f
 Перенесите установочный образ в папку /var/tmp/имя_пользователя/iso:
 
 mkdir -p "$(vboxmanage list systemproperties | grep 'Default machine folder:' | cut -d':' -f2 | tr -d ' ')/iso"
-
-mv Fedora-Sway-Live-x86_64-39-1.5.iso "$(vboxmanage list systemproperties | grep 'Default machine folder:' | cut -d':' -f2 | tr -d ' ')/iso"
-([рис. @fig-004])
+mv Fedora-Sway-Live-x86_64-39-1.5.iso "$(vboxmanage list systemproperties | grep 'Default machine folder:' | cut -d':' -f2 | tr -d ' ')/iso" ([рис. @fig-004])
 
 ![V Установочный образ](image/ustanov_obr.png){#fig-004 width=70%}
+
 
 5. Настройка хост-клавиши
 
@@ -138,13 +137,13 @@ mv Fedora-Sway-Live-x86_64-39-1.5.iso "$(vboxmanage list systemproperties | grep
 ![V Графическая настройка хост-клавиши](image/graf_host.png){#fig-005 width=70%}
 
 - Командная строка
--Проверьте текущую комбинацию для хост-клавиши:
+-- Проверьте текущую комбинацию для хост-клавиши:
 VBoxManage getextradata global GUI/Input/HostKeyCombination
--Установите нужную клавишу:
-VBoxManage setextradata global GUI/Input/HostKeyCombination 65383
-([рис. @fig-006])
+-- Установите нужную клавишу:
+VBoxManage setextradata global GUI/Input/HostKeyCombination 65383 ([рис. @fig-006])
 
 ![V Настройка хост-клавиши в командной строке](image/komand_host.png){#fig-006 width=70%}
+
 
 # Выводы
 
