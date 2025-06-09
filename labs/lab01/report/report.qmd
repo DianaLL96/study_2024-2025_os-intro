@@ -228,9 +228,7 @@ vboxmanage modifyvm "$(id -un)_os-intro" --firmware=efi
 8. После установки
 
 - Войдите в ОС под заданной вами при установке учётной записью.
-
 - Нажмите комбинацию Win+Enter для запуска терминала.
-
 - Переключитесь на роль супер-пользователя:
 sudo -i ([рис. @fig-015])
 
@@ -311,7 +309,10 @@ mount /dev/sr0 /media ([рис. @fig-024])
 - Создадим конфигурационный файл ~/.config/sway/config.d/95-system-keyboard-config.conf командой:
 touch ~/.config/sway/config.d/95-system-keyboard-config.conf
 - Отредактируем конфигурационный файл ~/.config/sway/config.d/95-system-keyboard-config.conf командой:
-exec_always /usr/libexec/sway-systemd/locale1-xkb-config --oneshot
+exec_always /usr/libexec/sway-systemd/locale1-xkb-config --oneshot  ([рис. @fig-026])
+
+![V Конфигурационный файл](image/file_konf.png){#fig-026 width=70%}
+
 - Переключаемся на роль супер-пользователя командой sudo -i
 - Отредактируем конфигурационный файл /etc/X11/xorg.conf.d/00-keyboard.conf:
 
@@ -321,7 +322,9 @@ Section "InputClass"
         Option "XkbLayout" "us,ru"
         Option "XkbVariant" ",winkeys"
         Option "XkbOptions" "grp:rctrl_toggle,compose:ralt,terminate:ctrl_alt_bksp"
-EndSection
+EndSection ([рис. @fig-027])
+
+![V Редактирование конфигурационного файла в роли супер-пользователя](image/sudo_redakt_file_konf.png){#fig-027 width=70%}
 
 - Перегрузим виртуальную машину командой reboot
 
@@ -330,7 +333,10 @@ EndSection
 11. Подключение общей папки
 
 - Внутри виртуальной машины добавим своего пользователя в группу vboxsf (вместо username указываем мой логин):
-gpasswd -a username vboxsf
+gpasswd -a username vboxsf ([рис. @fig-028])
+
+![V Добавление пользователя в группу](image/add_group.png){#fig-028 width=70%}
+
 - В хостовой системе подключим разделяемую папку:
 vboxmanage sharedfolder add "$(id -un)_os-intro" --name=work --hostpath=work --automount
 - Перегрузим виртуальную машину командой reboot
