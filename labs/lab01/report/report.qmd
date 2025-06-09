@@ -272,6 +272,89 @@ reboot
 
 9. Установка драйверов для VirtualBox
 
+- Войдем в ОС Fedora
+- Запустим терминал комбинацией клавиш Win+Enter.
+- Введем команду tmux для запуска терминального мультиплексора.
+- Переключаемся на роль супер-пользователя командой sudo -i ([рис. @fig-021])
+
+![V Команда tmux](image/tmux.png){#fig-021 width=70%}
+
+- Установливаем средства разработки командой:
+dnf -y group install "Development Tools" ([рис. @fig-022])
+
+![V Средства разработки](image/dev_tools.png){#fig-022 width=70%}
+
+- Установливаем пакет DKMS командой:
+dnf -y install dkms ([рис. @fig-023])
+
+![V Пакет DKMS](image/dkms.png){#fig-023 width=70%}
+
+- Подмонтируем диск:
+mount /dev/sr0 /media ([рис. @fig-024])
+
+![V Подмонтируем диск](image/mount.png){#fig-024 width=70%}
+
+- Установим драйвера:
+/media/VBoxLinuxAdditions.run ([рис. @fig-025])
+
+![V Установка драйверов](image/Additions.png){#fig-025 width=70%}
+
+- Перегрузим виртуальную машину командой reboot
+
+
+
+10. Настройка раскладки клавиатуры
+
+- Войдем в ОС Fedora
+- Запустим терминал комбинацией клавиш Win+Enter.
+- Введем команду tmux для запуска терминального мультиплексора.
+- Создадим конфигурационный файл ~/.config/sway/config.d/95-system-keyboard-config.conf командой:
+touch ~/.config/sway/config.d/95-system-keyboard-config.conf
+- Отредактируем конфигурационный файл ~/.config/sway/config.d/95-system-keyboard-config.conf командой:
+exec_always /usr/libexec/sway-systemd/locale1-xkb-config --oneshot
+- Переключаемся на роль супер-пользователя командой sudo -i
+- Отредактируем конфигурационный файл /etc/X11/xorg.conf.d/00-keyboard.conf:
+
+Section "InputClass"
+        Identifier "system-keyboard"
+        MatchIsKeyboard "on"
+        Option "XkbLayout" "us,ru"
+        Option "XkbVariant" ",winkeys"
+        Option "XkbOptions" "grp:rctrl_toggle,compose:ralt,terminate:ctrl_alt_bksp"
+EndSection
+
+- Перегрузим виртуальную машину командой reboot
+
+
+
+11. Подключение общей папки
+
+- Внутри виртуальной машины добавим своего пользователя в группу vboxsf (вместо username указываем мой логин):
+gpasswd -a username vboxsf
+- В хостовой системе подключим разделяемую папку:
+vboxmanage sharedfolder add "$(id -un)_os-intro" --name=work --hostpath=work --automount
+- Перегрузим виртуальную машину командой reboot
+- Папка будет монтироваться в /media/sf_work.
+
+
+
+12. Домашнее задание
+
+- Дождемся загрузки графического окружения и откроем терминал
+- В окне терминала выполним команду dmesg, она покажет последовательность загрузки системы:
+dmesg | less
+- Либо с помощью grep:
+dmesg | grep -i "то, что ищем"
+
+- Получим следующую информацию:
+-- Версия ядра Linux (Linux version).
+-- Частота процессора (Detected Mhz processor).
+-- Модель процессора (CPU0).
+-- Объём доступной оперативной памяти (Memory available).
+-- Тип обнаруженного гипервизора (Hypervisor detected).
+-- Тип файловой системы корневого раздела.
+-- Последовательность монтирования файловых систем.
+
 
 # Выводы
 
