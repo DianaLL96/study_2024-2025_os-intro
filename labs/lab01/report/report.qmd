@@ -138,9 +138,9 @@ mv Fedora-Sway-Live-x86_64-39-1.5.iso "$(vboxmanage list systemproperties | grep
 
 - Командная строка
 	- Проверьте текущую комбинацию для хост-клавиши:
-VBoxManage getextradata global GUI/Input/HostKeyCombination
+	VBoxManage getextradata global GUI/Input/HostKeyCombination
 	- Установите нужную клавишу:
-VBoxManage setextradata global GUI/Input/HostKeyCombination 65383 ([рис. @fig-006])
+	VBoxManage setextradata global GUI/Input/HostKeyCombination 65383 ([рис. @fig-006])
 
 ![V Настройка хост-клавиши в командной строке](image/komand_host.png){#fig-006 width=70%}
 
@@ -165,13 +165,13 @@ vboxmanage createhd --filename "$(vboxmanage list systemproperties | grep 'Defau
 - Выберите в VirtualBox Вашей виртуальной машины. Добавьте новый привод оптических дисков и выберите образ.
 
 	- Подключите загрузку с DVD
-vboxmanage modifyvm "$(id -un)_os-intro" --boot1 dvd
+	vboxmanage modifyvm "$(id -un)_os-intro" --boot1 dvd
 	- Добавьте IDE-контроллер
-vboxmanage storagectl "$(id -un)_os-intro" --name "IDE Controller" --add ide --controller PIIX4
+	vboxmanage storagectl "$(id -un)_os-intro" --name "IDE Controller" --add ide --controller PIIX4
 	- Установите созданный вами файл VDI в качестве первого виртуального жесткого диска новой виртуальной машины
-vboxmanage storageattach "$(id -un)_os-intro" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$(vboxmanage list systemproperties | grep 'Default machine folder:' | cut -d':' -f2 | tr -d ' ')/$(id -un)_os-intro/$(id -un)_os-intro.vdi"
+	vboxmanage storageattach "$(id -un)_os-intro" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$(vboxmanage list systemproperties | grep 'Default machine folder:' | cut -d':' -f2 | tr -d ' ')/$(id -un)_os-intro/$(id -un)_os-intro.vdi"
 	- Подключите к виртуальной машине ISO-файл:
-vboxmanage storageattach "$(id -un)_os-intro" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium "$(vboxmanage list systemproperties | grep 'Default machine folder:' | cut -d':' -f2 | tr -d ' ')/iso/Fedora-Sway-Live-x86_64-39-1.5.iso"
+	vboxmanage storageattach "$(id -un)_os-intro" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium "$(vboxmanage list systemproperties | grep 'Default machine folder:' | cut -d':' -f2 | tr -d ' ')/iso/Fedora-Sway-Live-x86_64-39-1.5.iso"
 
 - В качестве графического контроллера поставьте VMSVGA.
 vboxmanage modifyvm "$(id -un)_os-intro" --graphicscontroller=vmsvga
