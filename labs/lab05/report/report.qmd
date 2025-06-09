@@ -86,70 +86,100 @@ format:
 cd
 touch abc1
 cp abc1 april
-cp abc1 may
+cp abc1 may ([рис. @fig-001]).
+
+![V Копирование файла в текущем каталоге](image/copy_file_this_catalog.png){#fig-001 width=70%}
 
 - Копирование нескольких файлов в каталог. Скопировать файлы april и may в каталог
 monthly:
 mkdir monthly
-cp april may monthly
+cp april may monthly ([рис. @fig-002]).
+
+![V Копирование нескольких файлов в каталог](image/copy_some_files_catalog.png){#fig-002 width=70%}
 
 - Копирование файлов в произвольном каталоге. Скопировать файл monthly/may в файл
 с именем june:
 cp monthly/may monthly/june
-ls monthly
+ls monthly ([рис. @fig-003]).
+
+![V Копирование файлов в произвольном каталоге](image/copy_file_other_catalog.png){#fig-003 width=70%}
 
 - Копирование каталогов в текущем каталоге. Скопировать каталог monthly в каталог
 monthly.00:
 mkdir monthly.00
-cp -r monthly monthly.00
+cp -r monthly monthly.00 ([рис. @fig-004]).
+
+![V Копирование каталогов в текущем каталоге](image/copy_catalogs_this_catalog.png){#fig-004 width=70%}
 
 - Копирование каталогов в произвольном каталоге. Скопировать каталог monthly.00
 в каталог /tmp:
-cp -r monthly.00 /tmp
+cp -r monthly.00 /tmp ([рис. @fig-005]).
+
+![V Копирование каталогов в произвольном каталоге](image/copy_catalogs_other_catalog.png){#fig-005 width=70%}
 
 - Переименование файлов в текущем каталоге. Изменить название файла april на
 july в домашнем каталоге:
 cd
-mv april july
+mv april july ([рис. @fig-006]).
+
+![V Переименование файлов в текущем каталоге](image/change_name_file_this_catalog.png){#fig-006 width=70%}
 
 - Перемещение файлов в другой каталог. Переместить файл july в каталог monthly.00:
 mv july monthly.00
-ls monthly.00
+ls monthly.00 ([рис. @fig-007]).
+
+![V Перемещение файлов в другой каталог](image/change_location_file_this_catalog.png){#fig-007 width=70%}
 
 - Переименование каталогов в текущем каталоге. Переименовать каталог monthly.00
 в monthly.01
-mv monthly.00 monthly.01
+mv monthly.00 monthly.01 ([рис. @fig-008]).
 
-- Перемещение каталога в другой каталог. Переместить каталог monthly.01в каталог
+![V Переименование каталогов в текущем каталоге](image/change_name_catalogs_this_catalog.png){#fig-008 width=70%}
+
+- Перемещение каталога в другой каталог. Переместить каталог monthly.01 в каталог
 reports:
 mkdir reports
-mv monthly.01 reports
+mv monthly.01 reports ([рис. @fig-009]).
+
+![V Перемещение каталога в другой каталог](image/change_location_catalog_other_catalog.png){#fig-009 width=70%}
 
 - Переименование каталога, не являющегося текущим. Переименовать каталог
 reports/monthly.01 в reports/monthly:
-mv reports/monthly.01 reports/monthly
+mv reports/monthly.01 reports/monthly ([рис. @fig-010]).
+
+![V Переименование каталога, не являющегося текущим](image/change_name_inside_catalog.png){#fig-010 width=70%}
 
 - Требуется создать файл ~/may с правом выполнения для владельца:
 cd
 touch may
 ls -l may
 chmod u+x may
-ls -l may
+ls -l may  ([рис. @fig-011]).
+
+![V Требуется создать файл с правом выполнения для владельца](image/change_permissions_may.png){#fig-011 width=70%}
 
 - Требуется лишить владельца файла ~/may права на выполнение:
 chmod u-x may
-ls -l may
+ls -l may  ([рис. @fig-012]).
+
+![V Требуется лишить владельца файла права на выполнение](image/delete_permissions_may.png){#fig-012 width=70%}
 
 - Требуется создать каталог monthly с запретом на чтение для членов группы и всех
 остальных пользователей:
 cd
 mkdir monthly
-chmod g-r, o-r monthly
+chmod g-r, o-r monthly  ([рис. @fig-013]).
+
+![V Каталог с запретом на чтение для членов группы и всех
+остальных пользователей](image/no_permissions_read.png){#fig-013 width=70%}
 
 - Требуется создать файл ~/abc1 с правом записи для членов группы:
 cd
 touch abc1
-chmod g+w abc1
+chmod g+w abc1 ([рис. @fig-014]).
+
+![V Файл с правом записи для членов группы](image/yes_permissions_write.png){#fig-014 width=70%}
+
 
 2. Выполним слдующие команды:
 - Скопируйте файл /usr/include/sys/io.h в домашний каталог и назовите его
@@ -165,6 +195,7 @@ equipment. Если файла io.h нет, то используйте любо
 ~/ski.plases/equipment.
 - Создайте и переместите каталог ~/newdir в каталог ~/ski.plases и назовите
 его plans.
+
 
 3. Определите опции команды chmod, необходимые для того, чтобы присвоить перечис-
 ленным ниже файлам выделенные права доступа, считая, что в начале таких прав
@@ -194,9 +225,7 @@ cat?
 приведя примеры.
 
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию ([рис. @fig-001]).
-
-![V Сольвеевский конгресс (1927) «Электроны и фотоны»](image/solvay.jpg){#fig-001 width=70%}
+Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию 
 
 
 # Выводы
