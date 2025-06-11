@@ -185,18 +185,35 @@ chmod g+w abc1 ([рис. @fig-014]).
 
 2. Выполним слдующие команды:
 - Скопируйте файл /usr/include/sys/io.h в домашний каталог и назовите его
-equipment. Если файла io.h нет, то используйте любой другой файл в каталоге
-/usr/include/sys/ вместо него.
+equipment. 
+Файл io.h в каталоге /usr/include/sys есть, копируем и называем equipment. ([рис. @fig-015]).
+
+![V Скопируйте файл в домашний каталог и назовите его](image/copy_change_file_name.png){#fig-015 width=70%}
+
 - В домашнем каталоге создайте директорию ~/ski.plases.
-- Переместите файл equipment в каталог ~/ski.plases.
-- Переименуйте файл ~/ski.plases/equipment в ~/ski.plases/equiplist.
+- Переместите файл equipment в каталог ~/ski.plases. ([рис. @fig-016]).
+
+![V Создайте каталог и переместите туда файл](image/katalog_cut_file.png){#fig-016 width=70%}
+
+- Переименуйте файл ~/ski.plases/equipment в ~/ski.plases/equiplist. ([рис. @fig-017]).
+
+![V Переименуйте файл](image/change_name_file.png){#fig-017 width=70%}
+
 - Создайте в домашнем каталоге файл abc1 и скопируйте его в каталог
-~/ski.plases, назовите его equiplist2.
+~/ski.plases, назовите его equiplist2. ([рис. @fig-018]).
+
+![V Создайте, скопируйте и переименуйте файл](image/create_copy_change_name_file.png){#fig-018 width=70%}
+
 - Создайте каталог с именем equipment в каталоге ~/ski.plases.
 - Переместите файлы ~/ski.plases/equiplist и equiplist2 в каталог
-~/ski.plases/equipment.
+~/ski.plases/equipment. ([рис. @fig-019]).
+
+![V Переместить файлы в новый каталог](image/cut_file_new_katalog.png){#fig-019 width=70%}
+
 - Создайте и переместите каталог ~/newdir в каталог ~/ski.plases и назовите
-его plans.
+его plans. ([рис. @fig-020]).
+
+![V Переместить новый каталог в каталог, переименовать](image/cut_new_katalog_katalog_change_name.png){#fig-020 width=70%}
 
 
 3. Определите опции команды chmod, необходимые для того, чтобы присвоить перечис-
