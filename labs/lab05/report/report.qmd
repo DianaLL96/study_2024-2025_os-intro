@@ -220,11 +220,22 @@ equipment.
 3. Определите опции команды chmod, необходимые для того, чтобы присвоить перечис-
 ленным ниже файлам выделенные права доступа, считая, что в начале таких прав
 нет:
-- drwxr--r-- ... australia
-- drwx--x--x ... play
-- -r-xr--r-- ... my_os
-- -rw-rw-r-- ... feathers
-При необходимости создайте нужные файлы.
+- drwxr--r-- ... australia ([рис. @fig-021]).
+
+![V Доступы для каталога australia](image/chmod_australia.png){#fig-021 width=70%}
+
+- drwx--x--x ... play ([рис. @fig-022]).
+
+![V Доступы для каталога play](image/chmod_play.png){#fig-022 width=70%}
+
+- -r-xr--r-- ... my_os ([рис. @fig-023]).
+
+![V Доступы для файла my_os](image/chmod_my_os.png){#fig-023 width=70%}
+
+- -rw-rw-r-- ... feathers ([рис. @fig-024]).
+
+![V Доступы для файла feathers](image/chmod_feathers.png){#fig-024 width=70%}
+
 
 4. Проделайте приведённые ниже упражнения:
 - Просмотрите содержимое файла /etc/password.
